@@ -1,0 +1,7 @@
+Don't forget to setup the LSPs;
+then nvim-neo-tree;
+then trouble;
+then todo-comments;
+also nvim-cmp;
+study nvim-notify when creating custom plugins;
+
