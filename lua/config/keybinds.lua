@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>e", "<cmd>Neotree<CR>")
+vim.keymap.set("n", "<C-e>", "<cmd>Neotree<CR>")
 
 vim.keymap.set("n", "[t", 
   function()
