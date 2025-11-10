@@ -1,0 +1,5 @@
+
+LuaSnip  nvim-cmp 
+        Cloning into '/home/calebe/.local/share/nvim/lazy/LuaSnip'...
+        fatal: could not read Username for 'https://github.com': terminal prompts disabled
+
