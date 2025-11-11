@@ -34,6 +34,9 @@ return {
       "neovim/nvim-lspconfig"
     }
   },
+  -- // Web Development Setup // --
+  {
+  },
   -- // Telescope, Harpoon and Fuzzy Finds // --
   {
     "nvim-telescope/telescope.nvim", tag = "0.1.8",
@@ -149,7 +152,11 @@ return {
       {
 	"L3M0N4D3/LuaSnip",
 	version = "2.*",
-	build = "make install_jsregexp"
+	build = "make install_jsregexp",
+	dependencies = { "rafamadriz/friendly-snippets" },
+	config = function()
+	  require("luasnip.loaders.from_vscode").lazy_load()
+	end
       },
       "saadparwaiz1/cmp_luasnip"
     },
@@ -204,6 +211,7 @@ return {
 	sources = cmp.config.sources({
 	  { name = "nvim_lsp" },
 	  { name = "luasnip" },
+	  { name = "html-css" },
 	}, {
 	  {
 	    name = "buffer",
