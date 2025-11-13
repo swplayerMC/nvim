@@ -149,7 +149,7 @@ return {
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
-      --[[{
+      {
 	"L3M0N4D3/LuaSnip",
 	version = "2.*",
 	build = "make install_jsregexp",
@@ -158,17 +158,17 @@ return {
 	  require("luasnip.loaders.from_vscode").lazy_load()
 	end
       },
-      "saadparwaiz1/cmp_luasnip"]]
+      "saadparwaiz1/cmp_luasnip"
     },
     config = function()
       local cmp = require("cmp")
-      -- local luasnip = require("luasnip")
+      local luasnip = require("luasnip")
 
       cmp.setup({
 	snippet = {
 	  expand = function(args)
-	    -- luasnip.lsp_expand(args.body)
-	    vim.snippet.expand(args.body)
+	    luasnip.lsp_expand(args.body)
+	    -- vim.snippet.expand(args.body)
 	  end
 	},
 	window = {
@@ -187,10 +187,10 @@ return {
 	    -- (which is annoying)
 	    if cmp.visible() then
 	      cmp.select_next_item()
-	    --elseif luasnip.jumpable(1) then
-	      --luasnip.jump(1)
-	    --elseif luasnip.expandable() then
-	      --luasnip.expand()
+	    elseif luasnip.jumpable(1) then
+	      luasnip.jump(1)
+	    elseif luasnip.expandable() then
+	      luasnip.expand()
 	    else
 	      fallback()
 	    end
@@ -201,8 +201,8 @@ return {
 	    -- (which is annoying)
 	    if cmp.visible() then
 	      cmp.select_prev_item()
-	    --elseif luasnip.jumpable(-1) then
-	      --luasnip.jump(-1)
+	    elseif luasnip.jumpable(-1) then
+	      luasnip.jump(-1)
 	    else
 	      fallback()
 	    end
@@ -210,7 +210,7 @@ return {
 	}),
 	sources = cmp.config.sources({
 	  { name = "nvim_lsp" },
-	  --{ name = "luasnip" },
+	  { name = "luasnip" },
 	  { name = "html-css" },
 	}, {
 	  {
